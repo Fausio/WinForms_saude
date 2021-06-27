@@ -70,5 +70,15 @@ namespace WinForms_saude_modern_ui
 
             return dataTable;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+           var a = dataGridView1.CurrentCell.Value;
+        }
     }
 }

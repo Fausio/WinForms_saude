@@ -38,6 +38,7 @@ namespace WinForms_saude_modern_ui
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -136,8 +137,9 @@ namespace WinForms_saude_modern_ui
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox3.Location = new System.Drawing.Point(3, 10);
             this.groupBox3.Name = "groupBox3";
@@ -156,15 +158,26 @@ namespace WinForms_saude_modern_ui
             this.button1.Text = "Limpar";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button5.Location = new System.Drawing.Point(9, 21);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(105, 29);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Editar";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // button4
             // 
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(6, 22);
+            this.button4.Location = new System.Drawing.Point(120, 21);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 26);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Gravar";
+            this.button4.Size = new System.Drawing.Size(105, 29);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Apagar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // ListingActivist
             // 
@@ -198,5 +211,6 @@ namespace WinForms_saude_modern_ui
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

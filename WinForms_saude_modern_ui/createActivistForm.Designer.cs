@@ -39,7 +39,7 @@ namespace WinForms_saude_modern_ui
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_insert_ativist = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -132,7 +132,7 @@ namespace WinForms_saude_modern_ui
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.btn_insert_ativist);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox2.Location = new System.Drawing.Point(3, 16);
             this.groupBox2.Name = "groupBox2";
@@ -152,16 +152,16 @@ namespace WinForms_saude_modern_ui
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btn_insert_ativist
             // 
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(6, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 26);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Gravar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_insert_ativist.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_insert_ativist.Location = new System.Drawing.Point(6, 22);
+            this.btn_insert_ativist.Name = "btn_insert_ativist";
+            this.btn_insert_ativist.Size = new System.Drawing.Size(104, 26);
+            this.btn_insert_ativist.TabIndex = 1;
+            this.btn_insert_ativist.Text = "Gravar";
+            this.btn_insert_ativist.UseVisualStyleBackColor = true;
+            this.btn_insert_ativist.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
@@ -197,7 +197,7 @@ namespace WinForms_saude_modern_ui
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_insert_ativist;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
