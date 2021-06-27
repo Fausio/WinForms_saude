@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domains
 {
-    class Activist
+    public class Activist : Person
     {
     }
 }

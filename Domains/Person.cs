@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace Domains
 {
-    public abstract class Person
+    public partial   class Person
     {
         protected string Name { get; set; }
         protected string Gender { get; set; }
         protected DateTime DateOfBirth { get; set; }
 
-        protected string age()
+        protected static int CalculateAge(DateTime dateOfBirth)
         {
-            // return the age
-            return null;
+            int age = 0; 
+            age = DateTime.Now.Year - dateOfBirth.Year;
+
+            if (DateTime.Now.DayOfYear < dateOfBirth.DayOfYear)
+                age = age - 1;
+
+            return age;
         }
     }
 }
