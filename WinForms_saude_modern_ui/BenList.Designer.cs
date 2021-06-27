@@ -116,6 +116,7 @@ namespace WinForms_saude_modern_ui
             this.btn_insert_ativist.TabIndex = 1;
             this.btn_insert_ativist.Text = "Apagar";
             this.btn_insert_ativist.UseVisualStyleBackColor = true;
+            this.btn_insert_ativist.Click += new System.EventHandler(this.btn_insert_ativist_Click);
             // 
             // BenList
             // 

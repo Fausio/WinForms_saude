@@ -24,6 +24,9 @@ namespace WinForms_saude_modern_ui
 
                                 FROM		[win_form_saude].[dbo].[Beneficiary]  AS ben
                                 LEFT JOIN   [win_form_saude].[dbo].Activist as at ON AT.Id = BEN.ActivistId ";
+
+        string sql_delete = "DELETE [win_form_saude].[dbo].[Beneficiary]  WHERE ID = @SelectedID";
+
         public BenList()
         {
             InitializeComponent(); 
@@ -70,6 +73,33 @@ namespace WinForms_saude_modern_ui
         {
             dataGridView1.DataSource = Getbens();
         }
-        
+
+        private void btn_insert_ativist_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(cctring);
+            SqlCommand cmd = new SqlCommand(sql_delete, con);
+
+
+
+
+            try
+            {
+                con.Open();
+                cmd.Parameters.AddWithValue("@SelectedID", dataGridView1.CurrentRow.Cells[0].Value);
+                cmd.ExecuteNonQuery();
+
+
+                MessageBox.Show("Operação realizada com sucesso!");
+
+                dataGridView1.DataSource = Getbens();
+                dataGridView1.Refresh();
+
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show("Falha: " + x.ToString());
+            }
+        }
     }
 }
