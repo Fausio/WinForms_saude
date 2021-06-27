@@ -1,7 +1,7 @@
 ﻿
 namespace WinForms_saude_modern_ui
 {
-    partial class createActivistForm
+    partial class ListingActivist
     {
         /// <summary>
         /// Required designer variable.
@@ -38,29 +38,28 @@ namespace WinForms_saude_modern_ui
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(54, 23);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 1;
             this.button1.Text = "x";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Criar Ativista";
+            this.label1.Size = new System.Drawing.Size(98, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Lista dos ativistas";
             // 
-            // createActivistForm
+            // ListingActivist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 522);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Name = "createActivistForm";
-            this.Text = "createActivistForm";
+            this.Name = "ListingActivist";
+            this.Text = "ListingActivist";
             this.ResumeLayout(false);
             this.PerformLayout();
 

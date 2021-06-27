@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,19 +24,21 @@ namespace WinForms_saude_modern_ui
 
         private void openChildForm(Form childForm)
         {
-            if (activeForm == null)
+            if (activeForm != null)
             {
                 activeForm.Close();
-                activeForm = childForm;
-                childForm.TopLevel = false;
-                childForm.FormBorderStyle = FormBorderStyle.None;
-                childForm.Dock = DockStyle.Fill;
-                panel4.Controls.Add(childForm);
-                panel4.Tag = childForm;
-                childForm.BringToFront();
-                childForm.Show();
+             
 
             }
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel4.Controls.Add(childForm);
+            panel4.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
         private void customizedDesigng()
@@ -125,6 +128,8 @@ namespace WinForms_saude_modern_ui
 
         private void button9_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection();
+
             openChildForm(new createActivistForm());
 
             hideSubmenus();
@@ -132,6 +137,7 @@ namespace WinForms_saude_modern_ui
 
         private void button8_Click(object sender, EventArgs e)
         {
+            openChildForm(new ListingActivist());
             hideSubmenus();
         }
     }
