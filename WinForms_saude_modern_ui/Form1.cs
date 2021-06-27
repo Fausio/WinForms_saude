@@ -106,14 +106,13 @@ namespace WinForms_saude_modern_ui
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ///
+            openChildForm(new benInsert());
             hideSubmenus();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ///
-            hideSubmenus();
+            openChildForm(new BenList()); hideSubmenus();
         }
 
         private void button3_Click(object sender, EventArgs e)

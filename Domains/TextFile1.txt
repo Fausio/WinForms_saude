@@ -34,3 +34,12 @@ INSERT INTO ActivistType ([description])
 VALUES ('Ativista Simples'),
         ('Ativista Chefe'),
 		('Supervisor')
+
+
+
+		ALTER TABLE Beneficiary
+ADD  DataOfBirth Datetime
+
+
+ALTER TABLE Beneficiary
+ADD  Gender varchar(255)
