@@ -8,6 +8,7 @@ namespace Domains
 {
     public partial   class Person
     {
+        protected int Id { get; set; }
         protected string Name { get; set; }
         protected string Gender { get; set; }
         protected DateTime DateOfBirth { get; set; }
