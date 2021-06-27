@@ -128,7 +128,8 @@ namespace WinForms_saude_modern_ui
 
         private void button9_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
+           
+
 
             openChildForm(new createActivistForm());
 
