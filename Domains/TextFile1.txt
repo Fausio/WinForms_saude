@@ -1,0 +1,36 @@
+﻿sql criation tables
+
+
+CREATE TABLE ActivistType(
+Id INT PRIMARY KEY IDENTITY(1,1),
+[description] VARCHAR(255) NOT NULL)
+
+
+
+
+CREATE TABLE Activist(
+Id INT PRIMARY KEY IDENTITY(1,1),
+Name VARCHAR(255) NOT NULL,
+SuperiorId INT  ,
+ActivistTypeId INT NOT NULL,
+CONSTRAINT FK_activist_activistTypId FOREIGN KEY (ActivistTypeId) References ActivistType(Id)
+)
+
+
+
+
+CREATE TABLE Beneficiary (
+Id INT PRIMARY KEY IDENTITY(1,1),
+Name VARCHAR(255) NOT NULL,
+ActivistId INT NULL ,
+CONSTRAINT FK_benefiicary_activist FOREIGN KEY (ActivistId) References Activist(Id)
+)
+
+
+
+
+
+INSERT INTO ActivistType ([description])
+VALUES ('Ativista Simples'),
+        ('Ativista Chefe'),
+		('Supervisor')
