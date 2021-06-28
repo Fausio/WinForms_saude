@@ -33,11 +33,11 @@ namespace WinForms_saude_modern_ui
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,7 +52,6 @@ namespace WinForms_saude_modern_ui
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_insert_ativist = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -82,7 +81,7 @@ namespace WinForms_saude_modern_ui
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(641, 219);
+            this.dataGridView1.Size = new System.Drawing.Size(1205, 379);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -92,9 +91,9 @@ namespace WinForms_saude_modern_ui
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox1.Location = new System.Drawing.Point(4, 3);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(647, 241);
+            this.groupBox1.Size = new System.Drawing.Size(1211, 401);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista dos Beneficiarios";
@@ -106,29 +105,40 @@ namespace WinForms_saude_modern_ui
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 520);
+            this.panel1.Size = new System.Drawing.Size(1237, 664);
             this.panel1.TabIndex = 7;
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.groupBox6);
             this.groupBox4.Controls.Add(this.textBox3);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.comboBox3);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.comboBox1);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox4.Location = new System.Drawing.Point(347, 250);
+            this.groupBox4.Location = new System.Drawing.Point(566, 410);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(301, 154);
+            this.groupBox4.Size = new System.Drawing.Size(648, 154);
             this.groupBox4.TabIndex = 14;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Estado de HIV";
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(476, 114);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(166, 29);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Atualizar Estado de HIV";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox6
             // 
@@ -167,14 +177,6 @@ namespace WinForms_saude_modern_ui
             this.label6.TabIndex = 25;
             this.label6.Text = "Data";
             // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(88, 44);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(207, 23);
-            this.comboBox3.TabIndex = 24;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -187,7 +189,9 @@ namespace WinForms_saude_modern_ui
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownHeight = 200;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.IntegralHeight = false;
             this.comboBox1.Location = new System.Drawing.Point(88, 15);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(207, 23);
@@ -214,9 +218,9 @@ namespace WinForms_saude_modern_ui
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox2.Location = new System.Drawing.Point(4, 250);
+            this.groupBox2.Location = new System.Drawing.Point(3, 410);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(337, 154);
+            this.groupBox2.Size = new System.Drawing.Size(557, 154);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados do Beneficiario";
@@ -308,26 +312,16 @@ namespace WinForms_saude_modern_ui
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.btn_insert_ativist);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox3.Location = new System.Drawing.Point(4, 410);
+            this.groupBox3.Location = new System.Drawing.Point(3, 567);
+            this.groupBox3.MaximumSize = new System.Drawing.Size(1226, 62);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(647, 57);
+            this.groupBox3.Size = new System.Drawing.Size(1211, 62);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ações";
-            // 
-            // button2
-            // 
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(475, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(166, 29);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Atualizar Estado de HIV";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -355,8 +349,10 @@ namespace WinForms_saude_modern_ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 521);
+            this.ClientSize = new System.Drawing.Size(1237, 664);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(1253, 703);
+            this.MinimumSize = new System.Drawing.Size(1253, 703);
             this.Name = "BenList";
             this.Text = "BenList";
             this.Load += new System.EventHandler(this.BenList_Load);
@@ -390,7 +386,6 @@ namespace WinForms_saude_modern_ui
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;

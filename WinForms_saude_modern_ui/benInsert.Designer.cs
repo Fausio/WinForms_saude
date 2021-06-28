@@ -34,15 +34,15 @@ namespace WinForms_saude_modern_ui
             this.button3 = new System.Windows.Forms.Button();
             this.btn_insert_ativist = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -57,18 +57,19 @@ namespace WinForms_saude_modern_ui
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(669, 500);
+            this.panel1.Size = new System.Drawing.Size(1237, 664);
             this.panel1.TabIndex = 6;
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.btn_insert_ativist);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox2.Location = new System.Drawing.Point(13, 414);
+            this.groupBox2.Location = new System.Drawing.Point(6, 599);
+            this.groupBox2.MaximumSize = new System.Drawing.Size(1226, 62);
+            this.groupBox2.MinimumSize = new System.Drawing.Size(1226, 62);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(647, 61);
+            this.groupBox2.Size = new System.Drawing.Size(1226, 62);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ações";
@@ -96,7 +97,6 @@ namespace WinForms_saude_modern_ui
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.comboBox2);
@@ -105,12 +105,46 @@ namespace WinForms_saude_modern_ui
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox1.Location = new System.Drawing.Point(10, 12);
+            this.groupBox1.Location = new System.Drawing.Point(6, 3);
+            this.groupBox1.MaximumSize = new System.Drawing.Size(1226, 593);
+            this.groupBox1.MinimumSize = new System.Drawing.Size(1226, 593);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(647, 396);
+            this.groupBox1.Size = new System.Drawing.Size(1226, 593);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Formulário do Benefici\'ario";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Location = new System.Drawing.Point(33, 206);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(318, 53);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 22);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(36, 19);
+            this.radioButton1.TabIndex = 11;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "M";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(55, 22);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(31, 19);
+            this.radioButton2.TabIndex = 12;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "F";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
@@ -164,44 +198,14 @@ namespace WinForms_saude_modern_ui
             this.label3.TabIndex = 7;
             this.label3.Text = "Nome";
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 22);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(36, 19);
-            this.radioButton1.TabIndex = 11;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "M";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(55, 22);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(31, 19);
-            this.radioButton2.TabIndex = 12;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "F";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Location = new System.Drawing.Point(33, 206);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(318, 53);
-            this.groupBox3.TabIndex = 13;
-            this.groupBox3.TabStop = false;
-            // 
             // benInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 500);
+            this.ClientSize = new System.Drawing.Size(1237, 664);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(1253, 703);
+            this.MinimumSize = new System.Drawing.Size(1253, 703);
             this.Name = "benInsert";
             this.Text = "benInsert";
             this.Load += new System.EventHandler(this.benInsert_Load);

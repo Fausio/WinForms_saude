@@ -62,7 +62,7 @@ namespace WinForms_saude_modern_ui
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(668, 522);
+            this.panel1.Size = new System.Drawing.Size(1484, 761);
             this.panel1.TabIndex = 5;
             // 
             // groupBox2
@@ -71,9 +71,9 @@ namespace WinForms_saude_modern_ui
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.btn_insert_ativist);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox2.Location = new System.Drawing.Point(12, 405);
+            this.groupBox2.Location = new System.Drawing.Point(12, 589);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(647, 61);
+            this.groupBox2.Size = new System.Drawing.Size(1160, 61);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ações";
@@ -110,9 +110,9 @@ namespace WinForms_saude_modern_ui
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox1.Location = new System.Drawing.Point(9, 3);
+            this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(647, 396);
+            this.groupBox1.Size = new System.Drawing.Size(1160, 580);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Formulário do ativista ";
@@ -166,10 +166,10 @@ namespace WinForms_saude_modern_ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(1484, 761);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(684, 561);
-            this.MinimumSize = new System.Drawing.Size(684, 561);
+            this.MaximumSize = new System.Drawing.Size(1500, 800);
+            this.MinimumSize = new System.Drawing.Size(1500, 800);
             this.Name = "createActivistForm";
             this.Text = "createActivistForm";
             this.Load += new System.EventHandler(this.createActivistForm_Load);

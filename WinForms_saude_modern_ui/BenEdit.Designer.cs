@@ -57,7 +57,7 @@ namespace WinForms_saude_modern_ui
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(658, 502);
+            this.panel1.Size = new System.Drawing.Size(1237, 664);
             this.panel1.TabIndex = 7;
             // 
             // groupBox2
@@ -66,9 +66,11 @@ namespace WinForms_saude_modern_ui
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.btn_insert_ativist);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox2.Location = new System.Drawing.Point(6, 405);
+            this.groupBox2.Location = new System.Drawing.Point(3, 600);
+            this.groupBox2.MaximumSize = new System.Drawing.Size(1226, 62);
+            this.groupBox2.MinimumSize = new System.Drawing.Size(1226, 62);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(647, 61);
+            this.groupBox2.Size = new System.Drawing.Size(1226, 62);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ações";
@@ -82,6 +84,7 @@ namespace WinForms_saude_modern_ui
             this.button3.TabIndex = 2;
             this.button3.Text = "Limpar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btn_insert_ativist
             // 
@@ -105,8 +108,9 @@ namespace WinForms_saude_modern_ui
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.MinimumSize = new System.Drawing.Size(1226, 593);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(647, 396);
+            this.groupBox1.Size = new System.Drawing.Size(1226, 593);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Formulário do Benefici\'ario";
@@ -199,8 +203,10 @@ namespace WinForms_saude_modern_ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 502);
+            this.ClientSize = new System.Drawing.Size(1237, 664);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(1253, 703);
+            this.MinimumSize = new System.Drawing.Size(1253, 703);
             this.Name = "BenEdit";
             this.Text = "BenEdit";
             this.Load += new System.EventHandler(this.BenEdit_Load);

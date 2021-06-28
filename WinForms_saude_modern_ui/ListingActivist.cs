@@ -56,22 +56,13 @@ namespace WinForms_saude_modern_ui
                 con.Open();
                 myReader = cmd.ExecuteReader();
                 dataTable.Load(myReader);
-
-
-
             }
             catch (Exception)
             {
-
                 throw;
             }
 
-
-
-
-
-
-
+             
             return dataTable;
         }
 
@@ -89,10 +80,7 @@ namespace WinForms_saude_modern_ui
         {
          
             SqlConnection con = new SqlConnection(cctring);
-            SqlCommand cmd = new SqlCommand(sql_delete_activist, con);
-
-
-
+            SqlCommand cmd = new SqlCommand(sql_delete_activist, con); 
 
             try
             {
@@ -107,15 +95,20 @@ namespace WinForms_saude_modern_ui
                 dataGridView1.Refresh();
 
             }
-            catch (Exception x)
-            {
 
+            catch (Exception x)
+            { 
                 MessageBox.Show("Falha: " + x.ToString());
             }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -16,15 +16,31 @@ namespace WinForms_saude_modern_ui
     {
 
         string cctring = "Data Source=LAPTOP-DU4GOUVH;Initial Catalog=win_form_saude;Integrated Security=True;Pooling=False";
-        string sql_datagrid = @"SELECT  BEN.Id [Id do beneficiario],
+        string sql_datagrid = @"SELECT  ben.Id, 
 		                                ben.Name [Nome do beneficiario],
 		                                Genero = CASE WHEN ben.gender ='M' THEN 'Masculino' WHEN ben.gender ='F' THEN 'Feminino' ELSE '' END ,
-		                                ben.DataOfBirth AS [Data de nascimento],
+		                                CONVERT(varchar,ben.DataOfBirth, 105)  AS [Data de nascimento],
 		                                Idade =  FLOOR(DATEDIFF(day, CAST(ben.DataOfBirth As Date),GETDATE())/365.25),
+		                                CASE WHEN hiv.[Description] IS NULL THEN '' ELSE hiv.[Description] END AS [Estado de HIV] ,
+		                                CASE WHEN hh.hiv_data IS NULL THEN '' ELSE CONVERT(varchar,hh.hiv_data, 105) END AS [Data do estado de HIV] ,
 		                                at.Name AS [Nome do Ativista]
 
                                 FROM		[win_form_saude].[dbo].[Beneficiary]  AS ben
-                                LEFT JOIN   [win_form_saude].[dbo].Activist as at ON AT.Id = BEN.ActivistId ";
+                                LEFT JOIN   [win_form_saude].[dbo].[Activist] as at ON AT.Id = BEN.ActivistId 
+                                LEFT JOIN   [win_form_saude].[dbo].[HIVstatusHistory] AS hh ON hh.beneficiary_id = ben.Id  
+			                                AND hh.Id IN (
+						                                       SELECT Id FROM (
+ 
+													                                SELECT  row_number() OVER (PARTITION BY beneficiary_id ORDER BY hiv_data DESC ) AS _Row,  
+															                                *
+													                                FROM  [win_form_saude].[dbo].[HIVstatusHistory]
+
+								                                ) AS lastHiv 
+								                                WHERE lastHiv._Row = 1
+							                                )
+                                LEFT JOIN   [win_form_saude].[dbo].[hiv]  ON hiv.Id = hh.hiv_id";
+
+
 
         string sql_delete = "DELETE [win_form_saude].[dbo].[Beneficiary]  WHERE ID = @SelectedID";
         string sql_populate_ben = "SELECT * FROM  [win_form_saude].[dbo].[Beneficiary]  WHERE ID = @SelectedID";
@@ -40,6 +56,27 @@ namespace WinForms_saude_modern_ui
                                 WHERE Id = @thisId
                              ";
 
+        string sql_insert_hiv_history = @"
+                                            INSERT INTO [win_form_saude].[dbo].[HIVstatusHistory]  ([hiv_id],hiv_data,beneficiary_id)
+                                            SELECT 
+                                            (SELECT Id FROM hiv WHERE [Description] = @hivDescription),
+                                            CONVERT(date, @thisDate  ),
+                                            @ThisBenID
+            
+        ";
+
+        string sql_last_hiv_status = @"   SELECT
+                                          [Description]
+                                          FROM (
+			                                        SELECT  row_number() OVER (PARTITION BY beneficiary_id ORDER BY hiv_data DESC ) AS _Row,  
+					                                        [Description],beneficiary_id
+			                                        FROM    [win_form_saude].[dbo].[HIVstatusHistory]
+			                                        JOIN    [win_form_saude].[dbo].[hiv] ON hiv.Id = [HIVstatusHistory].hiv_id
+		                                        ) AS tab
+		                                        WHERE _Row = 1 
+		                                        AND beneficiary_id = @thisID
+                                        ";
+
          
         int benID = 0;
         public BenList()
@@ -47,6 +84,42 @@ namespace WinForms_saude_modern_ui
 
             InitializeComponent();
         }
+
+        public string GetLastHiv(int benid)
+        {
+            string name = "";
+
+            SqlConnection con = new SqlConnection(cctring);
+            SqlCommand cmd = new SqlCommand(sql_last_hiv_status, con);
+            cmd.Parameters.AddWithValue("@thisID", benid);
+            SqlDataReader myReader;
+
+
+
+            try
+            {
+                con.Open();
+                myReader = cmd.ExecuteReader();
+
+                if (benid != null)
+                {
+                    while (myReader.Read())
+                    {
+
+                        name = myReader.GetString("Description");
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return name;
+        }
+
 
         public int activisId(string Name)
         {
@@ -110,6 +183,33 @@ namespace WinForms_saude_modern_ui
             }
 
             return name;
+        }
+
+
+        public void FillHIVCombo()
+        {
+
+
+            SqlConnection con = new SqlConnection(cctring);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [win_form_saude].[dbo].[HIV] ORDER BY  [Description] ", con);
+            SqlDataReader myReader;
+
+
+
+            try
+            {
+                con.Open();
+                myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                { 
+                    comboBox1.Items.Add(myReader.GetString("Description"));
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void FillCombo()
@@ -207,10 +307,10 @@ namespace WinForms_saude_modern_ui
                 }
 
             }
-            catch (Exception)
+            catch (Exception x )
             {
 
-                throw;
+                MessageBox.Show("Falha: " + x.ToString());
             }
 
             return ben;
@@ -222,8 +322,8 @@ namespace WinForms_saude_modern_ui
             dataGridView1.DataSource = Getbens();
 
             DateTime dt = DateTime.Now;
-            textBox3.Text = dt.ToString("yyyy/MM/dd");
-
+            textBox3.Text = dt.ToString("yyyy/MM/dd"); 
+            FillHIVCombo();
             FillCombo();
         }
 
@@ -319,11 +419,50 @@ namespace WinForms_saude_modern_ui
                 radioButton1.Checked = true;
             }
 
+            //
+
+            //   " "
+
+            comboBox1.Text = GetLastHiv(int.Parse(BenId));
+            label7.Text = "Estado atual: " + GetLastHiv(int.Parse( BenId));
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var BenId = dataGridView1.CurrentRow.Cells[0].Value;
+        }
+
+
+ 
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(cctring);
+            SqlCommand cmd = new SqlCommand(sql_insert_hiv_history, con);
+            
+
+
+            cmd.Parameters.AddWithValue("@hivDescription", comboBox1.SelectedItem); 
+            cmd.Parameters.AddWithValue("@thisDate", textBox3.Text); 
+            cmd.Parameters.AddWithValue("@ThisBenID", benID);
+
+
+            try
+            {
+                con.Open(); 
+                cmd.ExecuteNonQuery();
+
+
+                MessageBox.Show("Operação realizada com sucesso!");
+                dataGridView1.DataSource = Getbens();
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show("Falha: " + x.ToString());
+            }
         }
     }
 }
