@@ -51,35 +51,7 @@ namespace WinForms_saude_modern_ui
 
 						WHERE [Data de nascimento] BETWEEN @startdate AND @enddate";
 
-        string sql_abens = @"SELECT 
-										* 
-							FROM		(
-
-											SELECT  
-													ben.Name [Nome do beneficiario],
-													Genero = CASE WHEN ben.gender ='M' THEN 'Masculino' WHEN ben.gender ='F' THEN 'Feminino' ELSE '' END ,
-													CONVERT(varchar,ben.DataOfBirth, 105)  AS [Data de nascimento],
-													Idade =  FLOOR(DATEDIFF(day, CAST(ben.DataOfBirth As Date),GETDATE())/365.25),
-													CASE WHEN hiv.[Description] IS NULL THEN '' ELSE hiv.[Description] END AS [Estado de HIV] ,
-													CASE WHEN hh.hiv_data IS NULL THEN '' ELSE CONVERT(varchar,hh.hiv_data, 105) END AS [Data do estado de HIV] ,
-													at.Name AS [Nome do Ativista]
-
-											FROM		[win_form_saude].[dbo].[Beneficiary]  AS ben
-											LEFT JOIN   [win_form_saude].[dbo].[Activist] as at ON AT.Id = BEN.ActivistId 
-											LEFT JOIN   [win_form_saude].[dbo].[HIVstatusHistory] AS hh ON hh.beneficiary_id = ben.Id  
-														AND hh.Id IN (
-																		   SELECT Id FROM (
- 
-																								SELECT  row_number() OVER (PARTITION BY beneficiary_id ORDER BY hiv_data DESC ) AS _Row,  
-																										*
-																								FROM  [win_form_saude].[dbo].[HIVstatusHistory]
-
-																			) AS lastHiv 
-																			WHERE lastHiv._Row = 1
-																		)
-											LEFT JOIN   [win_form_saude].[dbo].[hiv]  ON hiv.Id = hh.hiv_id
-
-										) AS benToreport
+        string sql_abens = @"
 							 ";
 
         string sql_adults = @"SELECT 
@@ -156,7 +128,6 @@ namespace WinForms_saude_modern_ui
         private void button3_Click(object sender, EventArgs e)
         {
             string path = @"C:\app\Hiv_report.xlsx";
-
 			criateSheet(path, sql_kids);
 
 		}
@@ -197,7 +168,7 @@ namespace WinForms_saude_modern_ui
 
 			#region pupulate
 
-			DataTable dataTable = new DataTable();
+			 
 
 
 
@@ -206,13 +177,23 @@ namespace WinForms_saude_modern_ui
 			SqlCommand cmd = new SqlCommand(sql, con);
 			SqlDataReader myReader;
 
-
+			
 
 			try
 			{
 				con.Open();
 				myReader = cmd.ExecuteReader();
-				dataTable.Load(myReader);
+				 
+
+                while (myReader.Read())
+                { 
+					foreach (var item in myReader)
+					{
+						var a = myReader[0].ToString();
+					}
+
+				}
+
 			}
 			catch (Exception)
 			{
