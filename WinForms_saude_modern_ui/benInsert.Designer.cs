@@ -120,7 +120,7 @@ namespace WinForms_saude_modern_ui
             this.groupBox3.Controls.Add(this.radioButton2);
             this.groupBox3.Location = new System.Drawing.Point(33, 206);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(318, 53);
+            this.groupBox3.Size = new System.Drawing.Size(560, 53);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             // 
@@ -148,17 +148,17 @@ namespace WinForms_saude_modern_ui
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(144, 107);
+            this.textBox2.Location = new System.Drawing.Point(232, 107);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 23);
+            this.textBox2.Size = new System.Drawing.Size(361, 23);
             this.textBox2.TabIndex = 10;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(144, 155);
+            this.comboBox2.Location = new System.Drawing.Point(232, 155);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(207, 23);
+            this.comboBox2.Size = new System.Drawing.Size(361, 23);
             this.comboBox2.TabIndex = 9;
             // 
             // label2
@@ -167,9 +167,9 @@ namespace WinForms_saude_modern_ui
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(33, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 15);
+            this.label2.Size = new System.Drawing.Size(112, 15);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Idade";
+            this.label2.Text = "Data de nascimento";
             // 
             // label4
             // 
@@ -183,9 +183,9 @@ namespace WinForms_saude_modern_ui
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 56);
+            this.textBox1.Location = new System.Drawing.Point(232, 56);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 23);
+            this.textBox1.Size = new System.Drawing.Size(361, 23);
             this.textBox1.TabIndex = 6;
             // 
             // label3

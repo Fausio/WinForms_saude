@@ -9,13 +9,13 @@ namespace Domains
     public class ReportDTO
     {
 
-        public int Name { get; set; }
-        public int Gender { get; set; }
-        public int DateOfb { get; set; }
+        public string Name { get; set; }
+        public string Gender { get; set; }
+        public string DateOfb { get; set; }
         public int age { get; set; }
-        public int Hiv { get; set; }
-        public int hivData { get; set; }
-        public int Ativist { get; set; }
+        public string Hiv { get; set; }
+        public string hivData { get; set; }
+        public string Ativist { get; set; }
 
 
 

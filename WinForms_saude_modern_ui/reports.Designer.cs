@@ -111,6 +111,7 @@ namespace WinForms_saude_modern_ui
             this.button2.TabIndex = 3;
             this.button2.Text = "Baixar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox3
             // 
@@ -148,27 +149,29 @@ namespace WinForms_saude_modern_ui
             this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button5.Location = new System.Drawing.Point(6, 116);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(305, 39);
+            this.button5.Size = new System.Drawing.Size(424, 39);
             this.button5.TabIndex = 5;
             this.button5.Text = "3 - Baixar relatório de todos os beneficiarios";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button4.Location = new System.Drawing.Point(6, 71);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(305, 39);
+            this.button4.Size = new System.Drawing.Size(424, 39);
             this.button4.TabIndex = 4;
             this.button4.Text = "2 - Baixar relatório das beneficiarios mair de idade ";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button3.Location = new System.Drawing.Point(6, 26);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(305, 39);
+            this.button3.Size = new System.Drawing.Size(424, 39);
             this.button3.TabIndex = 3;
             this.button3.Text = "1 - Baixar relatório das beneficiarios menor de idade ";
             this.button3.UseVisualStyleBackColor = true;
