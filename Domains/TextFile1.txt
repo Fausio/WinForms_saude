@@ -43,3 +43,39 @@ ADD  DataOfBirth Datetime
 
 ALTER TABLE Beneficiary
 ADD  Gender varchar(255)
+
+
+
+
+
+CREATE TABLE hiv (
+Id INT PRIMARY KEY IDENTITY(1,1),
+[Description] VARCHAR(255) NOT NULL)		
+
+
+CREATE TABLE HIVstatusHistory(
+Id INT PRIMARY KEY IDENTITY(1,1),
+hiv_id INT ,
+hiv_data  DATETIME  ,
+beneficiary_id INT,
+
+ CONSTRAINT 	FK_hiv_history_Hiv FOREIGN KEY (hiv_id) REFERENCES hiv(Id),
+ CONSTRAINT 	FK_hiv_history_beneficiary FOREIGN KEY (beneficiary_id) REFERENCES beneficiary(Id),
+)
+
+
+
+
+
+INSERT INTO hiv ([Description])
+values 
+('Indeterminado'	),
+('Criança exposta'	),
+('Negativo'   ),
+('Positivo em  TARV'),
+('Positivo não TARV'),
+('Não revelado'),
+('Não conhece' ),
+('Não recomendado'  	),
+('Não rastreado'   	  ),
+('Rastreado para o HIV' )

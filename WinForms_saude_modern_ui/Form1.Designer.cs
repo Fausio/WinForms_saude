@@ -314,9 +314,9 @@ namespace WinForms_saude_modern_ui
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.Panel panel4;
     }
 }
 

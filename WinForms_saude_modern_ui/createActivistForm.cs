@@ -79,10 +79,7 @@ namespace WinForms_saude_modern_ui
 
             SqlConnection con = new SqlConnection(cctring);
             SqlCommand cmd = new SqlCommand(InsertSQL, con);
-          
-
            
-
             try
             {
                 con.Open();

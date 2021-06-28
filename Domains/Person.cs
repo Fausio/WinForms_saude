@@ -8,20 +8,31 @@ namespace Domains
 {
     public partial   class Person
     {
-        protected int Id { get; set; }
-        protected string Name { get; set; }
-        protected string Gender { get; set; }
-        protected DateTime DateOfBirth { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Gender { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
-        protected static int CalculateAge(DateTime dateOfBirth)
+        public   string  CalculateAge( )
         {
-            int age = 0; 
-            age = DateTime.Now.Year - dateOfBirth.Year;
 
-            if (DateTime.Now.DayOfYear < dateOfBirth.DayOfYear)
-                age = age - 1;
+            if (DateOfBirth != null)
+            {
+                int age = 0;
 
-            return age;
+                age = DateTime.Now.Year - DateOfBirth.Year;
+
+                if (DateTime.Now.DayOfYear < DateOfBirth.DayOfYear)
+                    age = age - 1;
+
+                return age.ToString();
+            }
+            else
+            {
+                return null;
+            }
+          
+           
         }
     }
 }
